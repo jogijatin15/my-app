@@ -1,0 +1,167 @@
+.App {
+  
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+.tokenpage {
+  margin-left: 70px;
+  margin-top:50px;
+}
+
+.tokenlabel {
+  display: block;
+  color:#666;
+}
+
+.tokeninput, .cont {
+  display: inline-block;
+  width: 300px;
+}
+
+input {
+  background-color: #fbfbfb !important;
+}
+
+.token-container {
+  margin-top: 50px;
+  display: flex;  
+}
+
+.experience-container,.email-container {
+  margin-left: 50px;
+}
+
+.removeapp {
+  margin-left: 50px;
+}
+
+.button-container {
+  margin-right:50px;
+  margin-top: 50px;
+  float:right;
+}
+
+.addapp {
+  margin-top: 20px;
+  color:#333;
+}
+
+.added-row {
+  display: flex;
+  margin-top: 10px;
+}
+
+
+.move-icon {
+  position:relative;
+  display: inline-block;
+  top:19px;
+  right: 235px;
+}
+
+i {
+  color: #007bff;
+
+}
+
+.add-application {
+  margin-left: 30px;
+  margin-top:20px;
+}
+
+
+.btn-primary{
+  background:#007bff;
+  border-color:#007bff;
+}
+
+.removeapp {
+  position: relative;
+  top:36px;
+}
+
+h3 {
+  color: #666;
+}
+
+.info{
+  margin-top: 30px;
+  color:#666;
+}
+
+.fail{
+  display: none;
+  font-size: 13px;
+  color:red;    
+}
+
+.char {
+  margin-top: 0px;
+}
+
+.btncancelToken{
+  color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.my{
+  border: 1px solid red;
+  height: 100px;
+}
+
+.app-container {
+  margin-left: 77px;
+  width: 333px;
+}
+
+.starting{
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.dyrow{
+  display: inline-flex;
+}
+
+.delete-icon{
+  margin-top: 35px;
+  margin-left: 55px;
+}
