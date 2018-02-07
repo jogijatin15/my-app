@@ -12,9 +12,7 @@ class UserTopDefault extends Component {
   }
 
  render() {
-
-    return (
- 
+    return ( 
           <div className="tokenpage">
 
               <div className="token-info">
@@ -43,17 +41,10 @@ class UserTopDefault extends Component {
               
               </div>
 
-              
-
-
-            </div>      
- 
-      
+            </div>   
     );
   
   }
-
-
 
 }
 export default UserTopDefault;
