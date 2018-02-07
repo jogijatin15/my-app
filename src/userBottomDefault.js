@@ -17,8 +17,13 @@ class UserBottomDefault extends Component {
 
 
   onClickAddButton() {
-    const rowValue = new Date().toLocaleTimeString();
-    const newEntry = {row : rowValue};
+    //const rowValue = new Date().toLocaleTimeString();
+    const rowValue = Math.floor(Math.random() * 9999);
+    
+    const newEntry = {
+      row : rowValue,
+      application: ' ',
+      experience: ' '};
     this.props.onClick(newEntry);
   }
 
@@ -48,8 +53,6 @@ class UserBottomDefault extends Component {
     );
   
   }
-
-
 
 }
 export default UserBottomDefault;

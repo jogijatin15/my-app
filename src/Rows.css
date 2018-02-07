@@ -164,4 +164,5 @@ h3 {
 .delete-icon{
   margin-top: 35px;
   margin-left: 55px;
+  cursor: pointer;
 }

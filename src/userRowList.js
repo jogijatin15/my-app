@@ -19,6 +19,10 @@ class UserRowList extends Component {
     
     this.onClickAddReference = this.onClickAddReference.bind(this);
     this.onClickDeleteReference = this.onClickDeleteReference.bind(this);
+    this.onChangeApplicationTextBoxReference = this.onChangeApplicationTextBoxReference.bind(this);
+    this.onChangeExperienceTextBoxReference = this.onChangeExperienceTextBoxReference.bind(this);
+    this.onChangeTextBoxReference = this.onChangeTextBoxReference.bind(this);
+
   }
   
  
@@ -28,32 +32,89 @@ class UserRowList extends Component {
     }));
   }
   
-  
-  onClickDeleteReference(indexData){   
-    this.setState(prevState => ({
-      cards: prevState.cards.splice(indexData,1)
-    }));    
+  onClickDeleteReference(indexData){
+    
+    const currentState = this.state.cards;
+    indexData = parseInt(indexData);
+    currentState.splice(indexData,1);   
+    
+    this.setState({
+      cards: currentState
+    })
   }
 
+
+  onChangeApplicationTextBoxReference(ind, app) {
+    console.log(ind);
+    console.log(app);
+    const currentState = this.state.cards;
+
+    currentState[ind].application = app;
+
+    console.log(currentState);
+
+    this.setState({
+      cards: currentState
+    })    
+  }
+
+
+   onChangeExperienceTextBoxReference(ind, exp) {
+    console.log(ind);
+    console.log(exp);
+    const currentState = this.state.cards;
+
+    currentState[ind].experience = exp;
+
+    console.log(currentState);
+
+    this.setState({
+      cards: currentState
+    })    
+  }
+
+  onChangeTextBoxReference(elem_index, type, enteredValue) {
+    console.log(elem_index);
+    console.log(type);
+    console.log(enteredValue);
+
+    const currentState = this.state.cards;
+    if (type == "application") {
+        currentState[elem_index].application = enteredValue;
+    } else {
+        currentState[elem_index].experience = enteredValue;
+    }
+
+    console.log(currentState);
+    console.table(currentState);
+
+    this.setState({
+      cards: currentState
+    })    
+  }
+
+
   render() {
-    
-    const getState = this.state.cards;
-    console.log(getState);
+
+      let temp = this.state.cards;
+      console.log(temp);
 
     return(
 
       <div>
         
-        {/* {this.state.cards.map((each,index) => <UserRow key={index.toString()} id={index.toString()} onClick={this.onClickDeleteReference}/>)} */ }
 
-        {/* Both the commands */}
-        {this.state.cards.map((each,index) => <UserRow key={index.toString()} id={index.toString()} onClick={this.onClickDeleteReference}/>)}
-        
-        <UserBottomDefault onClick={this.onClickAddReference} /> 
-        
-        {/*   {this.props.cardsReference.map((each,index) => <GitHubCard key={index.toString()}avatar_url={each.avatar_url} name={each.name} company={each.company}/>)}  */}
-        { /*  <GitHubCard avatar_url={this.props.avatar_url_reference} name={this.props.name_reference} company={this.props.company_reference} />*/}
-        {/*   <GitHubCard avatar_url='https://avatars1.githubusercontent.com/u/17865993?v=4' name='Jatin Jogi' company='Cognizant' />*/}
+        {this.state.cards.map((each,index) => 
+
+          <UserRow key={index} id={index} appvalue={each.application} expvalue={each.experience}
+          
+          onClick={this.onClickDeleteReference} 
+          onChange={this.onChangeTextBoxReference} 
+          
+          
+          />)}
+        <UserBottomDefault onClick={this.onClickAddReference} />      
+       
       
       </div>
       
